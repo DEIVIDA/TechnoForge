@@ -3,7 +3,6 @@ from django.urls import reverse_lazy
 from django.views import generic
 from .models import UserForge
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from .forms import LoginForm, UserRegistrationForm, UserProfileUpdateForm
 from PIL import Image

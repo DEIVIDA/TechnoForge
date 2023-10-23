@@ -4,12 +4,10 @@ from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect , get_object_or_404
 from .models import Post, Comment
 from .forms import PostForm, CommentForm
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views import generic
 from django.contrib import messages
 from taggit.models import Tag
 from django.db.models import Count
-from main.models import UserForge
 
 
 @login_required

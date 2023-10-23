@@ -1,10 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 from mptt.models import MPTTModel, TreeForeignKey
 from django.urls import reverse
 from taggit.managers import TaggableManager
-from django.contrib.auth import get_user_model
 from main.models import UserForge
 from django.conf import settings
 
