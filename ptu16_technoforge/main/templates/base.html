@@ -20,23 +20,39 @@
                     <a href="{% url "index" %}">PTU16 TechnoForge</a></p>
                 </div>
                 <div id="second" class="block">
-                    <a href="{% url "user_blog" %}">My Blog</a>
-                </div>
-                <div id="second" class="block">
-                    <a href="{% url "user_profile" %}">My Profile</a>
-                </div>
-                <div id="second" class="block">
                     <a href="{% url "user_profile" %}">Archive</a>
                 </div>
-                
+                {% if user.is_authenticated %}
+                    <div id="second" class="block">
+                        <a href="{% url "post_list" %}">My Blog</a>
+                    </div>
+                    <div id="second" class="block">
+                        <a href="{% url "user_profile" %}">My Profile</a>
+                    </div>               
+                    <div id="second" class="block">
+                        <a href="{% url "user_profile" %}">Archive</a>
+                    </div>
             </div>
-            <div id="header_right_column">
-                <div class="login_button">
-                <a href="{% url "login" %}">Login</a>
+                {% endif %}
+                <div id="header_right_column">
+                {% if user.is_authenticated %}
+                    <div class="login_button">
+                    <a href="{% url "logout" %}">Logout</a>
+                    </div>
+                    {% if user.is_superuser or user.is_staff %}
+                        <div class="admin">
+                        <a href="{% url "admin:index" %}">Admin</a>
+                        </div>
+                    {% endif %}
+                {% else %}
+                    <div class="login_button">
+                        <a href="{% url "login" %}">Login</a>
+                    </div>
+                    <div class="register_button">
+                        <a href="{% url "register" %}">Create User</a>
+                    </div>
+                {% endif %}
                 </div>
-                <div class="register_button">
-                <a href="{% url "register" %}">Create User</a>
-            </div>
         </div>
     </header>
     <main>
