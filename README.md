@@ -10,8 +10,8 @@ This application allows users to create posts and leave comments on those posts.
 
 Before using the application, make sure you have the following components installed:
 
-- Python (version 3.x)
-- Django (version 3.x)
+- Python (version 3.10)
+- Django (version 4.2)
 - Other dependencies listed in `requirements.txt`
 
 ## Installation
